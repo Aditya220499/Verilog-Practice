@@ -26,7 +26,7 @@ begin
         end
 
 $display("Start Simulation");
-$fwrite(response_file, "Time(ns)\tA_in\tB_in\tY_out\n"); // Header
+$fwrite(response_file, " A_in\tB_in\tY_out\n"); // Header
 
 
 while (!$feof(stimulus_file)) begin
@@ -38,8 +38,8 @@ while (!$feof(stimulus_file)) begin
             if (scan_count == 2) begin
                   #5;                       
                 // Write the stimulus and the resulting output to the results file
-                $fwrite(response_file, "\n %0t\t%b\t%b\t%b", 
-                        $time, t_A, t_B, t_Y);
+                $fwrite(response_file, "\n %b\t%b\t%b", 
+                         t_A, t_B, t_Y);
             end else if (scan_count != -1) begin
                 // Handle cases where a line might be incomplete
                 $display("Warning: Incomplete line read at time %0t", $time);
