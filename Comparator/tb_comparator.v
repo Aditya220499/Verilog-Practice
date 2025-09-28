@@ -32,7 +32,7 @@ $fwrite(response_file, " A_in\tB_in\tY_out\n"); // Header
 while (!$feof(stimulus_file)) begin
     
             
-            // Read two 8-bit decimal values from the file
+            // Read two 8-bit decimal values from the file 
             scan_count = $fscanf(stimulus_file, "%b %b\n", t_A, t_B);
 
             if (scan_count == 2) begin
