@@ -7,14 +7,14 @@
 :vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
 :vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
 :vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
-S_000002a7eb5e63b0 .scope module, "complement_2s" "complement_2s" 2 1;
+S_0000023b364a63b0 .scope module, "complement_2s" "complement_2s" 2 1;
  .timescale 0 0;
     .port_info 0 /OUTPUT 1 "compVal";
     .port_info 1 /INPUT 1 "val";
-o000002a7eb4f46c8 .functor BUFZ 1, C4<z>; HiZ drive
-v000002a7eb5e6b90_0 .net "compVal", 0 0, o000002a7eb4f46c8;  0 drivers
-o000002a7eb4f46f8 .functor BUFZ 1, C4<z>; HiZ drive
-v000002a7eb5e6540_0 .net "val", 0 0, o000002a7eb4f46f8;  0 drivers
+o0000023b364e46c8 .functor BUFZ 1, C4<z>; HiZ drive
+v0000023b364a6b90_0 .net "compVal", 0 0, o0000023b364e46c8;  0 drivers
+o0000023b364e46f8 .functor BUFZ 1, C4<z>; HiZ drive
+v0000023b364a6540_0 .net "val", 0 0, o0000023b364e46f8;  0 drivers
 # The file index is used to find the file name in the following table.
 :file_names 3;
     "N/A";
