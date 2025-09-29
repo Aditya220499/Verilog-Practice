@@ -1,0 +1,31 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1110-g18392a46)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000002b5ef6763d0 .scope module, "ripple_carry_adder" "ripple_carry_adder" 2 1;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "sum";
+    .port_info 1 /OUTPUT 1 "carry_out";
+    .port_info 2 /INPUT 1 "a";
+    .port_info 3 /INPUT 1 "b";
+    .port_info 4 /INPUT 1 "cin";
+o000002b5ef736488 .functor BUFZ 1, C4<z>; HiZ drive
+v000002b5ef676560_0 .net "a", 0 0, o000002b5ef736488;  0 drivers
+o000002b5ef7364b8 .functor BUFZ 1, C4<z>; HiZ drive
+v000002b5ef67ee60_0 .net "b", 0 0, o000002b5ef7364b8;  0 drivers
+o000002b5ef7364e8 .functor BUFZ 1, C4<z>; HiZ drive
+v000002b5ef67ef00_0 .net "carry_out", 0 0, o000002b5ef7364e8;  0 drivers
+o000002b5ef736518 .functor BUFZ 1, C4<z>; HiZ drive
+v000002b5ef676600_0 .net "cin", 0 0, o000002b5ef736518;  0 drivers
+o000002b5ef736548 .functor BUFZ 1, C4<z>; HiZ drive
+v000002b5ef6766a0_0 .net "sum", 0 0, o000002b5ef736548;  0 drivers
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "ripple_carry_adder.v";
