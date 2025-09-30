@@ -6,4 +6,10 @@ module ripple_carry_adder(
     input wire cin
 );
 //add logic
+    wire [4:0]c;
+    full_adder(sum, carry, a, b , cin);
+    full_adder(sum, carry, a, b , cin);
+    full_adder(sum, carry, a, b , cin);
+    full_adder(sum, carry, a, b , cin);
+
 endmodule
