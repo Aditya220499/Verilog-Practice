@@ -5,5 +5,5 @@ module ripple_carry_adder(
     input wire b,
     input wire cin
 );
-//add llogic
+//add logic
 endmodule
