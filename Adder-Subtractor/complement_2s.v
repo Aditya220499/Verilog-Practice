@@ -4,4 +4,5 @@ module complement_2s(
 );
 // Add 2 comp logic here 
 //Can add vectors of differenntsize , but better to do padding manually
+    assign compVal = ~val +1'b1;
 endmodule
