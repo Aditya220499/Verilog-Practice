@@ -6,4 +6,5 @@ module adder_subtractor(
     input wire cin
 )
 
+// Add Generate if-else logic in here for subtraction
 endmodule
