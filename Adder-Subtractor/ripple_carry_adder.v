@@ -9,7 +9,7 @@ module ripple_carry_adder(
     wire [3:0]b_comp;
     wire [4:0]c;
     assign c[0] = cin;
-    assign b_comp = b ^ cin;
+    assign b_comp = b ^ {4{cin}};
     full_adder fa1(sum[0], c[1], a[0], b_comp[0] , c[0]);
     full_adder fa2(sum[1], c[2], a[1], b_comp[1] , c[1]);
     full_adder fa3(sum[2], c[3], a[2], b_comp[2] , c[2]);
