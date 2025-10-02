@@ -17,14 +17,14 @@ end
 initial begin 
 $display("---------Start Simulation---------");
 #5 a=5; b=4; cin=0;
-#5 a=6; b=2; cin=1;
+#5 a=3; b=1; cin=1;
 #1
 $display("---------End Simulation-----------");
 #1 $finish;
 end
 
 initial begin 
-$monitor("A::%d || B::%d || Cin::%d || Carry::%d || Sum::%d",a,b,cin,carry_out,sum);
+$monitor("A::%d || B::%d || Cin::%d || Carry::%b || Sum::%b",a,b,cin,carry_out,sum);
 end
 
 endmodule
