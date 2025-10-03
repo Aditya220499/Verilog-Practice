@@ -16,4 +16,4 @@ module ripple_carry_adder(
     full_adder fa4(sum[3], c[4], a[3], b_comp[3] , c[3]);
     assign carry_out = c[4];
 
-endmodule
+endmodule 
