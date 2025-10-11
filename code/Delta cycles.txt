@@ -18,3 +18,12 @@ Observed / Monitor — $strobe, $monitor, assertions, observers (print stable va
 Repeat Active→NBA if the NBA updates caused new Active triggers (another delta). When no events remain, advance simulation time. 
 
 Practical takeaway: blocking = happens before non-blocking <= updates in the same time slot. That ordering is the single biggest source of delta surprises.
+
+
+Delta cycles vs clock cycles -
+
+Delta cycles are simulation internal zero-time iterations used to settle combinational logic at one simulation timepoint. They do not advance the clock. They let combinational changes ripple through in the same timestamp.
+
+Pipeline registers (clocked <= updates) create real cycle separation: values are captured on a clock edge and become available to the next stage on the next clock cycle (not merely in a delta). That’s why pipelining increases latency (in cycles) but can increase throughput (results per cycle).
+
+In short: delta = intra-time stabilization; registers = inter-cycle storage.
