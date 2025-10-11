@@ -1,0 +1,20 @@
+Delta cycles
+
+A delta cycle is a zero-time internal iteration in the simulator used to let concurrent processes settle at one simulation timepoint.
+It lets the simulator order and propagate signal changes (blocking assigns, continuous assigns, non-blocking updates, monitors) without advancing the simulated clock.
+
+1 — Why delta cycles exist 
+In hardware, when a combinational gate output changes, its fanout changes and that may trigger other combinational logic — this propagation happens physically with small gate delays.
+In simulation we often model that propagation as instant relative to the simulation time resolution, so we need an ordering mechanism inside the same timestamp to let events ripple through and stabilize. Those zero-time iterations are delta cycles.
+
+2 — High-level view of the simulator event model
+At each simulation time slot (e.g., t = 5 ns) the simulator executes a sequence of regions (simplified list below). Within a given time slot it may repeat Active→NBA→Monitor sequences across multiple delta cycles until no new events remain, then advance time.
+
+Common simplified ordering (practical view used in most docs / papers):
+Active — evaluate processes, execute blocking (=) assignments and continuous assigns.
+Inactive / #0 / Postponed — processes scheduled with #0 or postponed events.
+NBA (Non-Blocking Assignment) region — update LHS of all <= that were scheduled earlier.
+Observed / Monitor — $strobe, $monitor, assertions, observers (print stable values).
+Repeat Active→NBA if the NBA updates caused new Active triggers (another delta). When no events remain, advance simulation time. 
+
+Practical takeaway: blocking = happens before non-blocking <= updates in the same time slot. That ordering is the single biggest source of delta surprises.
