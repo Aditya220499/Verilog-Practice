@@ -1,4 +1,4 @@
-#Verilog Practice Repository ->  
+#Verilog Practice Repository -> 
 
 This repository is a collection of my practice projects in Verilog HDL, aimed at deepening my understanding of digital design concepts and HDL coding practices. I have explored industry-standard tools such as Xilinx Vivado and Intel Quartus, but for day-to-day practice I am using VS Code with Icarus Verilog (Iverilog) because of its lightweight setup and flexibility.
 
